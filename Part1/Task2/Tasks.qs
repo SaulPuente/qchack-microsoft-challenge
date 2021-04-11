@@ -20,6 +20,24 @@ namespace QCHack.Task2 {
     //
     operation Task2_ValidTriangle (inputs : Qubit[], output : Qubit) : Unit is Adj+Ctl {
         // ...
+        X(output);
+        use q = Qubit();
+        
+        Controlled X([inputs[0], inputs[1]], q);
+        Controlled X([q, inputs[2]], output);
+        Controlled X([inputs[0], inputs[1]], q);
+
+        X(inputs[0]);
+        X(inputs[1]);
+        X(inputs[2]);
+
+        Controlled X([inputs[0], inputs[1]], q);
+        Controlled X([q, inputs[2]], output);
+        Controlled X([inputs[0], inputs[1]], q);
+
+        X(inputs[0]);
+        X(inputs[1]);
+        X(inputs[2]);
     }
 }
 
