@@ -29,7 +29,7 @@ namespace QCHack.Task2 {
 
         X(inputs[0]);
         X(inputs[1]);
-        X(inputs[2]);
+        X(inputs[2]); 
 
         Controlled X([inputs[0], inputs[1]], q);
         Controlled X([q, inputs[2]], output);
